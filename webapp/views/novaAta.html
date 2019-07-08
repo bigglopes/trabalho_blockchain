@@ -17,7 +17,24 @@
         <link rel="stylesheet" href="/css/layouts/side-menu.css">
     <!--<![endif]-->
 
-    <script src="/js/listProducts.js"></script>
+   
+    
+    <script src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
+<script src="https://rawgit.com/RobinHerbots/Inputmask/5.x/dist/jquery.inputmask.js"></script>
+    
+
+  <script src="/js/formAta.js"></script>
+
+  <script type='text/javascript'>
+
+window.onload = function(){
+    var selector = document.getElementById("datareuniao");
+
+     var im = new Inputmask("99/99/9999");
+     im.mask(selector);
+}
+
+    </script>
 </head>
 <body>
 
@@ -34,12 +51,8 @@
     
                 <ul class="pure-menu-list">
                     <li class="pure-menu-item"><a href="/api/auth/dashboard" class="pure-menu-link">Home</a></li>
-                    <li class="pure-menu-item"><a href="/addProducts" class="pure-menu-link">Cadastrar Produtos</a></li>
-                    <li class="pure-menu-item"><a href="/getProducts" class="pure-menu-link">Lista Produtos</a></li>
-                    <li class="pure-menu-item"><a href="/addStage" class="pure-menu-link">Cadastrar Etapa</a></li>
-                    <li class="pure-menu-item"><a href="/getStages" class="pure-menu-link">Lista Etapas</a></li>
-                    <li class="pure-menu-item"><a href="/addHistory" class="pure-menu-link">Cadastrar Histórico</a></li>
-                    <li class="pure-menu-item"><a href="/listHistory" class="pure-menu-link">Lista Histórico</a></li>
+                    <li class="pure-menu-item"><a href="/exibirRegistroAta" class="pure-menu-link">Registrar ata de reunião</a></li>
+                    <li class="pure-menu-item"><a href="/listarAtasReuniao" class="pure-menu-link">Listar atas de reunião</a></li>
                     <li class="pure-menu-item"><a href="/api/auth/logout" class="pure-menu-link">Sair</a></li>    
                 </ul>
             </div>
@@ -47,27 +60,31 @@
 
         <div id="main">
             <div class="header">
-                <h1> Lista de Produtos </h1>
+                <h1> Registrar Ata </h1>
             </div>
 
             <div class="content" style="margin-top: 5%">
                 <div class="row justify-content-center">
-                    <div class="col-md-10">
-                        <table id="products-table" class="table table-dark">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Option</th>
-                                    <th scope="col">Produto</th>
-                                    <th scope="col">Preço</th>
-                                    <th scope="col">Owner</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                
-                            </tbody>
-                        </table>
+                    <div class="col-md-7">
+                        <form id="formAta">
+                            <div class="form-group">
+                                <label for="titulo">Título:</label>
+                                <input type="text" class="form-control" id="titulo" placeholder="Titulo da ata de reuniao" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="titulo">Data da reunião:</label>
+                                <input type="text" class="form-control" id="datareuniao" name="datareuniao"  required>
+                            </div>
+                            <div class="form-group">
+                                <label for="resumo">Resumo:</label>
+                                <textarea  class="form-control" id="resumo" rows="10" cols="50" placeholder="Resumo da ata de reuniao" required></textarea>
+                            </div>
+        
+                            <button id="load" type="submit" class="btn btn-primary btn-block">Registrar Ata</button>
+                        </form>
                     </div>
                 </div>
+
             </div>
             
             

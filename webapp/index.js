@@ -3,7 +3,8 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const app = express();
 
-const products = require("./apis/products/products.js");
+//const products = require("./apis/products/products.js");
+const ata = require("./apis/atas/atas.js");
 const stages = require("./apis/products/stages");
 
 // set default views folder
@@ -31,11 +32,11 @@ app.get('/', (req, res) => {
 app.use("/api/auth", authRoutes);
 
 // * Products pages * //
-app.get("/addProducts", products.renderAddProducts);
-app.get("/getProducts", products.renderGetProducts);
+//app.get("/addProducts", products.renderAddProducts);
+//app.get("/getProducts", products.renderGetProducts);
 
-app.post("/addProducts", products.addProducts);
-app.get("/listProducts", products.getProducts);
+//app.post("/addProducts", products.addProducts);
+//app.get("/listProducts", products.getProducts);
 
 // * Estágios * //
 app.get("/addStage", stages.renderAddStage);
@@ -43,6 +44,18 @@ app.get("/getStages", stages.renderGetStages);
 
 app.post("/addStage", stages.addStage);
 app.get("/listStages", stages.listStages);
+
+
+app.get("/exibirRegistroAta", ata.exibirRegistroAta);
+app.post("/registrarAta", ata.registrarAta);
+
+app.get("/listarAtasReuniao", ata.listarAtasReuniao);
+app.get("/listarAtasRegistradas", ata.listarAtasRegistradas);
+
+
+app.post( "/comentarAta", ata.registrarComentario );
+app.post( "/listarComentarios", ata.listarComentarios );
+
 
 const PORT = process.env.PORT || 3000;
 

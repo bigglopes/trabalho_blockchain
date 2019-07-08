@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="/css/layouts/side-menu.css">
     <!--<![endif]-->
 
-    <script src="/js/listStages.js"></script>
+    <script src="/js/listAtasReuniao.js"></script>
 </head>
 <body>
 
@@ -34,12 +34,15 @@
     
                 <ul class="pure-menu-list">
                     <li class="pure-menu-item"><a href="/api/auth/dashboard" class="pure-menu-link">Home</a></li>
-                    <li class="pure-menu-item"><a href="/addProducts" class="pure-menu-link">Cadastrar Produtos</a></li>
+                     <!--  <li class="pure-menu-item"><a href="/addProducts" class="pure-menu-link">Cadastrar Produtos</a></li>
                     <li class="pure-menu-item"><a href="/getProducts" class="pure-menu-link">Lista Produtos</a></li>
                     <li class="pure-menu-item"><a href="/addStage" class="pure-menu-link">Cadastrar Etapa</a></li>
                     <li class="pure-menu-item"><a href="/getStages" class="pure-menu-link">Lista Etapas</a></li>
                     <li class="pure-menu-item"><a href="/addHistory" class="pure-menu-link">Cadastrar Histórico</a></li>
                     <li class="pure-menu-item"><a href="/listHistory" class="pure-menu-link">Lista Histórico</a></li>
+                  -->
+                  <li class="pure-menu-item"><a href="/exibirRegistroAta" class="pure-menu-link">Registrar ata de reunião</a></li>
+                    <li class="pure-menu-item"><a href="/listarAtasReuniao" class="pure-menu-link">Listar atas de reunião</a></li>
                     <li class="pure-menu-item"><a href="/api/auth/logout" class="pure-menu-link">Sair</a></li>    
                 </ul>
             </div>
@@ -47,17 +50,50 @@
 
         <div id="main">
             <div class="header">
-                <h1> Lista de Etapas </h1>
+                <h1> Atas de Reunião</h1>
             </div>
 
             <div class="content" style="margin-top: 5%">
                 <div class="row justify-content-center">
                     <div class="col-md-10">
-                        <div class="accordion" id="accordionStages">
-                            
-                        </div>
+                        <table id="atas-table" class="table table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Título</th>
+                                    <th scope="col">Data</th>
+                                    <th scope="col">Comentário</td>
+                                     <th scope="col">Visualizar</td>
+                                        <th scope="col">Resumo</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                        </table>
                     </div>
                 </div>
+                <div id="modal">
+                
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+                    
+                      <!-- Modal content-->
+                      <div> 
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 class="modal-title">Resumo da ata de reunião</h4>
+                        </div>
+                        <div class="modal-body">
+                          <p><div id="resumoid">#resumoata</div></p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  </div>
             </div>
             
             

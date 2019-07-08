@@ -16,9 +16,11 @@
     "ejs": "^2.6.1",
     "express": "^4.17.0",
     "express-session": "^1.16.1",
+    "inputmask": "^4.0.8",
     "lodash": "^4.17.11",
     "nodemon": "^1.19.0",
     "redis": "^2.8.0",
     "web3": "^1.0.0-beta.55"
-  }
+  },
+  "exports": "$"
 }
